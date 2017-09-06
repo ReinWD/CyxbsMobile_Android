@@ -1,2 +1,2 @@
-include ':app', ':pickerview', ':FresherSpecial'
+include ':app', ':pickerview', ':FresherSpecial', ':base'
 //project(':freshman').projectDir = new File('FreshmanSpecial/app')
