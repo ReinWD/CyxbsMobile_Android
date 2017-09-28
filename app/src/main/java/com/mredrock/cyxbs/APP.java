@@ -20,6 +20,7 @@ import com.mredrock.cyxbs.util.LogUtils;
 import com.mredrock.cyxbs.util.SPUtils;
 import com.mredrock.cyxbs.util.Utils;
 import com.orhanobut.logger.Logger;
+import com.tencent.bugly.Bugly;
 import com.tencent.bugly.crashreport.CrashReport;
 import com.umeng.socialize.Config;
 import com.umeng.socialize.PlatformConfig;
@@ -210,7 +211,9 @@ public class APP extends MultiDexApplication {
 
         strategy.setUploadProcess(processName == null || processName.equals(packageName));
 
-        CrashReport.initCrashReport(getApplicationContext(), BuildConfig.BUGLY_APP_ID, BuildConfig.DEBUG, strategy);
+    //    CrashReport.initCrashReport(getApplicationContext(), BuildConfig.BUGLY_APP_ID, BuildConfig.DEBUG, strategy);
+
+        Bugly.init(getApplicationContext(), BuildConfig.BUGLY_APP_ID, BuildConfig.DEBUG, strategy);
     }
 
     @Nullable

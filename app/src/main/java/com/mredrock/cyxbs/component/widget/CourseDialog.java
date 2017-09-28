@@ -33,6 +33,10 @@ public class CourseDialog {
             ViewGroup.LayoutParams params = view.getLayoutParams();
             params.height = DensityUtils.dp2px(view.getContext(), 200);
             view.setLayoutParams(params);
+            ViewGroup.LayoutParams containerParams = view.getLayoutParams();
+            containerParams.height = DensityUtils.dp2px(context, DensityUtils.getScreenWidth(context) * 2 / 3);
+            layout.setLayoutParams(containerParams);
+
         }
 
         AlertDialog dialog = new AlertDialog.Builder(context)

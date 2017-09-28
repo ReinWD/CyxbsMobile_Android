@@ -46,6 +46,7 @@ import com.mredrock.cyxbs.network.func.UpdateVerifyFunc;
 import com.mredrock.cyxbs.network.func.UserCourseFilterFunc;
 import com.mredrock.cyxbs.network.func.UserInfoVerifyFunc;
 import com.mredrock.cyxbs.network.interceptor.StudentNumberInterceptor;
+import com.mredrock.cyxbs.network.interceptor.UserAgentInterceptor;
 import com.mredrock.cyxbs.network.observable.CourseListProvider;
 import com.mredrock.cyxbs.network.service.LostApiService;
 import com.mredrock.cyxbs.network.service.RedrockApiService;
@@ -128,6 +129,7 @@ public enum RequestManager {
             logging.setLevel(HttpLoggingInterceptor.Level.BODY);
             builder.addInterceptor(logging);
         }
+        builder.addInterceptor(new UserAgentInterceptor());
         builder.addInterceptor(new StudentNumberInterceptor());
 
         return builder.build();
